@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>JavaScript forEach i browseren - Eksempel</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Laver en unordered liste med et list item der kun bliver vist hvis variablem udskriv er tom -->
+        <ul id="udskrift">
+            <li style='color: red'>(Hvis du kan se denne besked i browseren, så er der noget galt)</li>
+        </ul>
+
+        <script>
+            //Laver en variabel udskriv der finder HTML-elementet der har ID'et udskrift
+            var udskriv = document.getElementById("udskrift");
+            //Laver et array navne med forskellige navne
+            var navne = [
+                "Sam Tsui",
+                "Counting Crows",
+                "Swedish House Mafia",
+                "Dimitri Vegas & Like Mike"
+            ];
+            // Sætter HTML-elementet udskriv til ikke at have nogle værdi(altså at der ikke skal stå noget)
+            udskriv.innerHTML = "";
+
+            // Denne forEach løber array'et navne igennem.
+            // For hvert navn i  arrayet,
+            // indsætter den en ny <li> inden i vores <ul>(udskriv.innerHTML)
+            navne.forEach(function (navn) {
+                udskriv.innerHTML += "<li>" + navn + "</li>";
+            });
+            // Udkskriver arrayet navne i konsollen i browseren - TIL FEJLSØGNING!
+            console.log(navne);
+        </script>
+
+    </div>
+</body>
